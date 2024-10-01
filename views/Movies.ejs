@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Production Houses</title>
+  </head>
+  <body>
+    <h1>Movies</h1>
+
+    <p>
+      <a href="/movies/add">Add Movie</a>
+    </p>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Released Year</th>
+          <th>Genre</th>
+          <th>Production House</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% movies.forEach(el => { %>
+        <tr>
+          <td><%= el.name %></td>
+          <td><%= el.released_year %></td>
+          <td><%= el.genre %></td>
+          <td><%= el.productionHouse %></td>
+          <td>
+            <a href="/movies/edit/<%= el.id %>">Edit</a> |
+            <a href="/movies/delete/<%= el.id %>">Delete</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

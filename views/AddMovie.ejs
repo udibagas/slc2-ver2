@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Movie</title>
+  </head>
+  <body>
+    <h1>Add Movie</h1>
+
+    <form method="post">
+      <p>
+        <label for="name">Name</label> <br />
+        <input type="text" name="name" id="name" />
+      </p>
+
+      <p>
+        <label for="released_year">Released Year</label> <br />
+        <input type="number" name="released_year" id="released_year" />
+      </p>
+
+      <p>
+        <label for="genre">Genre</label> <br />
+        <select name="genre" id="genre">
+          <option value="">-- Select Genre --</option>
+          <% genres.forEach(genre => { %>
+          <option value="<%= genre %>"><%= genre %></option>
+          <% }) %>
+        </select>
+      </p>
+
+      <p>
+        <label for="ProductionHouseId">Production House</label> <br />
+        <select name="ProductionHouseId" id="ProductionHouseId">
+          <option value="">-- Select Production House --</option>
+          <% ph.forEach(({id, name_prodHouse}) => { %>
+          <option value="<%= id %>"><%= name_prodHouse %></option>
+          <% }) %>
+        </select>
+      </p>
+
+      <p>
+        <button type="submit">Save</button>
+      </p>
+    </form>
+  </body>
+</html>
